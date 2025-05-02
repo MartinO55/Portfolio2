@@ -1,12 +1,78 @@
 body {
   background-image: url("../images/option4.png");
-  height: 100vh;
-
+  min-height: 100vh;
+  overflow: auto;
   background-size: cover;
   background-repeat: no-repeat;
 
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: larger;
+
+  #hero {
+    //background-color: white;
+    color: antiquewhite;
+
+    position: relative;
+    margin-bottom: 17rem;
+    #name {
+      font-size: 10rem;
+      padding-bottom: 1rem;
+      margin-top: -0.5rem;
+      opacity: 0;
+      transition: opacity 1s ease-out;
+    }
+    #jobTitle {
+      font-size: 6rem;
+      opacity: 0;
+      transition: opacity 1s ease-out;
+    }
+    #introCircle {
+      // background-color: greenyellow;
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 95.15%;
+      left: 52.5%;
+      transform: translate(-50%, -50%); // centers it
+      animation: pulseAnimation 2s ease-in-out infinite;
+      transition: 0s;
+    }
+
+    &.loaded #name,
+    &.loaded #jobTitle {
+      opacity: 1; // Fade in the text
+      transition-delay: 3s; // Delay text appearance until circle animation finishes
+    }
+  }
+}
+#aboutMe {
+  color: white;
+}
+#mySkills {
+  color: green;
+}
+#portfolioProjects {
+  color: blue;
+}
+#contactMe {
+  color: purple;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 rgba(173, 255, 47, 0.6);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 0 50px whitesmoke;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 rgba(173, 255, 47, 0.6);
+  }
 }
 
 img {
