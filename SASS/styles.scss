@@ -9,6 +9,23 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: larger;
 
+  .circle {
+    // background-color: greenyellow;
+    border-radius: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%); // centers it
+    animation: pulseAnimation 2s ease-in-out infinite;
+    transition: 0s;
+  }
+
+  .line {
+    position: absolute;
+    height: 0.2rem;
+    background-color: antiquewhite;
+    z-index: 1;
+    transform-origin: left center;
+  }
+
   #hero {
     //background-color: white;
     color: antiquewhite;
@@ -28,16 +45,26 @@ body {
       transition: opacity 1s ease-out;
     }
     #introCircle {
-      // background-color: greenyellow;
       height: 5rem;
       width: 5rem;
-      border-radius: 50%;
-      position: absolute;
       top: 95.15%;
       left: 52.5%;
-      transform: translate(-50%, -50%); // centers it
-      animation: pulseAnimation 2s ease-in-out infinite;
-      transition: 0s;
+    }
+
+    #name__LineTo {
+      left: 52.5%;
+      top: 86.5%;
+      transform: rotate(-92.7deg);
+      animation: growLineToName 1s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+    #name__LineUnder {
+      background-color: rgb(255, 255, 255);
+      transform: rotate(180deg);
+      left: 52%;
+      top: 36.5%;
+      animation: growLineUnderName 1.5s ease-out forwards;
+      animation-delay: 1.5s;
     }
 
     &.loaded #name,
@@ -60,18 +87,45 @@ body {
   color: purple;
 }
 
+@keyframes growLineToName {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    width: 15.4rem;
+  }
+}
+@keyframes growLineUnderName {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    width: 61.2rem;
+  }
+}
+
 @keyframes pulseAnimation {
   0% {
     transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 0 0 rgba(173, 255, 47, 0.6);
+    box-shadow: 0 0 0 rgba(172, 255, 47, 0.719);
   }
   50% {
     transform: translate(-50%, -50%) scale(1.05);
-    box-shadow: 0 0 50px whitesmoke;
+    box-shadow: 0 0 100px rgb(176, 255, 176);
   }
   100% {
     transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 0 0 rgba(173, 255, 47, 0.6);
+    box-shadow: 0 0 0 rgba(172, 255, 47, 0.699);
   }
 }
 
