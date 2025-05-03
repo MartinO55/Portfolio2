@@ -12,7 +12,6 @@ body {
   font-size: larger;
 
   .circle {
-    // background-color: greenyellow;
     border-radius: 100%;
     position: absolute;
     transform: translate(-50%, -50%); // centers it
@@ -51,6 +50,7 @@ body {
       width: 5rem;
       top: 95.15%;
       left: 52.5%;
+      background-color: rgba(250, 235, 215, 0.596);
     }
 
     #name__LineTo {
@@ -68,10 +68,10 @@ body {
     }
     #jobTitle__LineTo {
       //width: 20rem;
-      left: 50.3%;
+      left: 50.35%;
       top: 96.45%;
       transform: rotate(176deg);
-      @include growLine(growLineToJobTitle, 16.2rem, 1.2s, 0.5s);
+      @include growLine(growLineToJobTitle, 16.25rem, 1.2s, 0.5s);
     }
     #jobTitle__LineUnder {
       transform: rotate(180deg);
@@ -89,10 +89,51 @@ body {
 }
 #aboutMe {
   color: white;
+  margin-top: 25rem;
+
+  #aboutMe__circle {
+    height: 5rem;
+    width: 5rem;
+    top: 80%;
+    left: 70%;
+    background-color: rgba(250, 235, 215, 0.596);
+  }
+
+  #aboutMe__blurb__lineTo {
+    transform: rotate(150deg);
+    left: 66%;
+    top: 84%;
+    @include growLine(growLineToAboutMe, 20rem, 1.2s, 1.6s);
+  }
+  #aboutMe__SkillsGallery__LineTo {
+    left: 70%;
+    top: 84%;
+    transform: rotate(100deg);
+    @include growLine(growLineToSkillsGallery, 8rem, 1.2s, 1.6s);
+  }
+
+  #aboutMe__Contents {
+    display: flex;
+
+    #aboutMe__blurb {
+      width: 50%;
+      padding: 0.5rem;
+      margin-left: 12rem;
+      background-color: rgba(3, 0, 27, 0.918);
+      border-radius: 2rem;
+      border: 0.3rem solid white;
+    }
+    #skillsGallery {
+      width: 15%;
+      margin-left: 12rem;
+      padding: 0.6rem;
+      border: 0.3rem solid white;
+      border-radius: 2rem;
+      background-color: rgba(129, 127, 139, 0.918);
+    }
+  }
 }
-#mySkills {
-  color: green;
-}
+
 #portfolioProjects {
   color: blue;
 }

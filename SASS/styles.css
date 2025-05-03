@@ -45,6 +45,7 @@ body #hero #introCircle {
   width: 5rem;
   top: 95.15%;
   left: 52.5%;
+  background-color: rgba(250, 235, 215, 0.596);
 }
 body #hero #name__LineTo {
   left: 52.5%;
@@ -80,7 +81,7 @@ body #hero #name__LineUnder {
   }
 }
 body #hero #jobTitle__LineTo {
-  left: 50.3%;
+  left: 50.35%;
   top: 96.45%;
   transform: rotate(176deg);
   animation: growLineToJobTitle 1.2s ease-out 0.5s forwards;
@@ -91,7 +92,7 @@ body #hero #jobTitle__LineTo {
     opacity: 0;
   }
   100% {
-    width: 16.2rem;
+    width: 16.25rem;
     opacity: 1;
   }
 }
@@ -118,10 +119,65 @@ body #hero.loaded #name, body #hero.loaded #jobTitle {
 
 #aboutMe {
   color: white;
+  margin-top: 25rem;
 }
-
-#mySkills {
-  color: green;
+#aboutMe #aboutMe__circle {
+  height: 5rem;
+  width: 5rem;
+  top: 80%;
+  left: 70%;
+  background-color: rgba(250, 235, 215, 0.596);
+}
+#aboutMe #aboutMe__blurb__lineTo {
+  transform: rotate(150deg);
+  left: 66%;
+  top: 84%;
+  animation: growLineToAboutMe 1.2s ease-out 1.6s forwards;
+}
+@keyframes growLineToAboutMe {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 20rem;
+    opacity: 1;
+  }
+}
+#aboutMe #aboutMe__SkillsGallery__LineTo {
+  left: 70%;
+  top: 84%;
+  transform: rotate(100deg);
+  animation: growLineToSkillsGallery 1.2s ease-out 1.6s forwards;
+}
+@keyframes growLineToSkillsGallery {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 8rem;
+    opacity: 1;
+  }
+}
+#aboutMe #aboutMe__Contents {
+  display: flex;
+}
+#aboutMe #aboutMe__Contents #aboutMe__blurb {
+  width: 50%;
+  padding: 0.5rem;
+  margin-left: 12rem;
+  background-color: rgba(3, 0, 27, 0.918);
+  border-radius: 2rem;
+  border: 0.3rem solid white;
+}
+#aboutMe #aboutMe__Contents #skillsGallery {
+  width: 15%;
+  margin-left: 12rem;
+  padding: 0.6rem;
+  border: 0.3rem solid white;
+  border-radius: 2rem;
+  background-color: rgba(129, 127, 139, 0.918);
 }
 
 #portfolioProjects {
