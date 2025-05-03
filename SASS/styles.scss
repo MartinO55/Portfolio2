@@ -1,3 +1,5 @@
+@import "mixins";
+
 body {
   background-image: url("../images/option4.png");
   min-height: 100vh;
@@ -55,16 +57,27 @@ body {
       left: 52.5%;
       top: 86.5%;
       transform: rotate(-92.7deg);
-      animation: growLineToName 1s ease-out forwards;
-      animation-delay: 0.5s;
+      @include growLine(growLineToName, 15.4rem, 1.2s, 0.5s);
     }
     #name__LineUnder {
       background-color: rgb(255, 255, 255);
       transform: rotate(180deg);
       left: 52%;
       top: 36.5%;
-      animation: growLineUnderName 1.5s ease-out forwards;
-      animation-delay: 1.5s;
+      @include growLine(growLineUnderName, 62.2rem, 1.5s, 1.6s);
+    }
+    #jobTitle__LineTo {
+      //width: 20rem;
+      left: 50.3%;
+      top: 96.45%;
+      transform: rotate(176deg);
+      @include growLine(growLineToJobTitle, 16.2rem, 1.2s, 0.5s);
+    }
+    #jobTitle__LineUnder {
+      transform: rotate(180deg);
+      left: 36.75%;
+      top: 100%;
+      @include growLine(growLineUnderJobTitle, 44rem, 1.2s, 1.6s);
     }
 
     &.loaded #name,
@@ -85,33 +98,6 @@ body {
 }
 #contactMe {
   color: purple;
-}
-
-@keyframes growLineToName {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    width: 15.4rem;
-  }
-}
-@keyframes growLineUnderName {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    width: 61.2rem;
-  }
 }
 
 @keyframes pulseAnimation {

@@ -1,0 +1,18 @@
+/*so this is the animation mixin that handles the grow line function - I noticed alot of repition happening in the keyframes and abstracted a bunch here.
+Its now a 'function' that creates a new animation set in the CSS everytime you call it in the SCSS file*/
+@mixin growLine($name, $width, $duration: 1s, $delay: 0s) {
+  animation: #{$name} $duration ease-out $delay forwards;
+
+  @at-root {
+    @keyframes #{$name} {
+      0% {
+        width: 0;
+        opacity: 0;
+      }
+      100% {
+        width: $width;
+        opacity: 1;
+      }
+    }
+  }
+}

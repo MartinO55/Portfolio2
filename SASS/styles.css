@@ -1,3 +1,5 @@
+/*so this is the animation mixin that handles the grow line function - I noticed alot of repition happening in the keyframes and abstracted a bunch here.
+Its now a 'function' that creates a new animation set in the CSS everytime you call it in the SCSS file*/
 body {
   background-image: url("../images/option4.png");
   min-height: 100vh;
@@ -48,16 +50,66 @@ body #hero #name__LineTo {
   left: 52.5%;
   top: 86.5%;
   transform: rotate(-92.7deg);
-  animation: growLineToName 1s ease-out forwards;
-  animation-delay: 0.5s;
+  animation: growLineToName 1.2s ease-out 0.5s forwards;
+}
+@keyframes growLineToName {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 15.4rem;
+    opacity: 1;
+  }
 }
 body #hero #name__LineUnder {
   background-color: rgb(255, 255, 255);
   transform: rotate(180deg);
   left: 52%;
   top: 36.5%;
-  animation: growLineUnderName 1.5s ease-out forwards;
-  animation-delay: 1.5s;
+  animation: growLineUnderName 1.5s ease-out 1.6s forwards;
+}
+@keyframes growLineUnderName {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 62.2rem;
+    opacity: 1;
+  }
+}
+body #hero #jobTitle__LineTo {
+  left: 50.3%;
+  top: 96.45%;
+  transform: rotate(176deg);
+  animation: growLineToJobTitle 1.2s ease-out 0.5s forwards;
+}
+@keyframes growLineToJobTitle {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 16.2rem;
+    opacity: 1;
+  }
+}
+body #hero #jobTitle__LineUnder {
+  transform: rotate(180deg);
+  left: 36.75%;
+  top: 100%;
+  animation: growLineUnderJobTitle 1.2s ease-out 1.6s forwards;
+}
+@keyframes growLineUnderJobTitle {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 44rem;
+    opacity: 1;
+  }
 }
 body #hero.loaded #name, body #hero.loaded #jobTitle {
   opacity: 1;
@@ -80,32 +132,6 @@ body #hero.loaded #name, body #hero.loaded #jobTitle {
   color: purple;
 }
 
-@keyframes growLineToName {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    width: 15.4rem;
-  }
-}
-@keyframes growLineUnderName {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    width: 61.2rem;
-  }
-}
 @keyframes pulseAnimation {
   0% {
     transform: translate(-50%, -50%) scale(1);
