@@ -145,7 +145,8 @@ body {
   margin: 1rem;
 
   .Project__List {
-    border: 3px solid hotpink;
+    //so I think what we should do is set up a carousel for the projects, each automatically animating off their own small circle
+
     display: flex;
     .Project__Card {
       border: 3px solid whitesmoke;
@@ -153,6 +154,9 @@ body {
       margin: 1rem;
       width: 16%;
       padding: 0.5rem;
+      max-height: 30rem;
+      font-size: medium;
+      background-color: rgba(7, 14, 51, 0.692);
       img {
         height: 11%;
       }

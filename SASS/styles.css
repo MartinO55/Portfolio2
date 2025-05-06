@@ -190,7 +190,6 @@ body #hero.loaded #name, body #hero.loaded #jobTitle {
   margin: 1rem;
 }
 #portfolioProjects .Project__List {
-  border: 3px solid hotpink;
   display: flex;
 }
 #portfolioProjects .Project__List .Project__Card {
@@ -199,6 +198,9 @@ body #hero.loaded #name, body #hero.loaded #jobTitle {
   margin: 1rem;
   width: 16%;
   padding: 0.5rem;
+  max-height: 30rem;
+  font-size: medium;
+  background-color: rgba(7, 14, 51, 0.692);
 }
 #portfolioProjects .Project__List .Project__Card img {
   height: 11%;
