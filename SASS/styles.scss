@@ -130,15 +130,51 @@ body {
       border: 0.3rem solid white;
       border-radius: 2rem;
       background-color: rgba(129, 127, 139, 0.918);
+
+      img {
+        height: 4rem;
+      }
     }
   }
 }
 
 #portfolioProjects {
-  color: blue;
+  color: whitesmoke;
+  border: 3px solid white;
+  padding: 1rem;
+  margin: 1rem;
+
+  .Project__List {
+    border: 3px solid hotpink;
+    display: flex;
+    .Project__Card {
+      border: 3px solid whitesmoke;
+      border-radius: 2rem;
+      margin: 1rem;
+      width: 16%;
+      padding: 0.5rem;
+      img {
+        height: 11%;
+      }
+
+      .project__blurb {
+        border: 3px solid plum;
+      }
+
+      .project__links {
+        border: 3px solid white;
+        img {
+          height: 3rem;
+        }
+      }
+    }
+  }
 }
 #contactMe {
   color: purple;
+  img {
+    height: 4rem;
+  }
 }
 
 @keyframes pulseAnimation {
@@ -154,8 +190,4 @@ body {
     transform: translate(-50%, -50%) scale(1);
     box-shadow: 0 0 0 rgba(172, 255, 47, 0.699);
   }
-}
-
-img {
-  height: 4rem;
 }
