@@ -185,34 +185,62 @@ body #hero.loaded #name, body #hero.loaded #jobTitle {
 
 #portfolioProjects {
   color: whitesmoke;
-  border: 3px solid white;
   padding: 1rem;
-  margin: 1rem;
+  margin: 2rem;
 }
-#portfolioProjects .Project__List {
+#portfolioProjects .Project__Carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 2rem;
+}
+#portfolioProjects .Project__Carousel .Project__List {
   display: flex;
+  gap: 2rem;
+  transition: transform 0.5s ease;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  will-change: transform;
 }
-#portfolioProjects .Project__List .Project__Card {
+#portfolioProjects .Project__Carousel .Project__List .Project__Card {
   border: 3px solid whitesmoke;
   border-radius: 2rem;
   margin: 1rem;
-  width: 16%;
+  width: 20%;
   padding: 0.5rem;
   max-height: 30rem;
   font-size: medium;
   background-color: rgba(7, 14, 51, 0.692);
 }
-#portfolioProjects .Project__List .Project__Card img {
-  height: 11%;
+#portfolioProjects .Project__Carousel .Project__List .Project__Card img {
+  height: 15%;
 }
-#portfolioProjects .Project__List .Project__Card .project__blurb {
+#portfolioProjects .Project__Carousel .Project__List .Project__Card .project__blurb {
   border: 3px solid plum;
 }
-#portfolioProjects .Project__List .Project__Card .project__links {
+#portfolioProjects .Project__Carousel .Project__List .Project__Card .project__links {
   border: 3px solid white;
 }
-#portfolioProjects .Project__List .Project__Card .project__links img {
+#portfolioProjects .Project__Carousel .Project__List .Project__Card .project__links img {
   height: 3rem;
+}
+#portfolioProjects .carousel__prev,
+#portfolioProjects .carousel__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 2;
+}
+#portfolioProjects .carousel__prev {
+  left: 1rem;
+}
+#portfolioProjects .carousel__next {
+  right: 1rem;
 }
 
 #contactMe {
