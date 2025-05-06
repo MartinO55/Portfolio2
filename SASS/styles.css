@@ -216,7 +216,8 @@ body #hero.loaded #name, body #hero.loaded #jobTitle {
 }
 
 #contactMe {
-  color: purple;
+  color: whitesmoke;
+  border: 3px solid palegreen;
 }
 #contactMe img {
   height: 4rem;
