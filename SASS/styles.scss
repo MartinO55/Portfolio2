@@ -71,6 +71,12 @@ body {
       left: 45.6%;
       background-color: rgba(250, 235, 215, 0.596);
     }
+    #contactMe__LineTo {
+      top: 65%;
+      left: -312%;
+      transform: rotate(-5deg);
+      @include growLine(growLinetoContactMe, 45.5rem, 1.2s, 0.5s);
+    }
 
     #name__LineTo {
       left: 46.55%;

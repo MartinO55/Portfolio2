@@ -65,6 +65,22 @@ body #hero #introCircle {
   left: 45.6%;
   background-color: rgba(250, 235, 215, 0.596);
 }
+body #hero #contactMe__LineTo {
+  top: 65%;
+  left: -312%;
+  transform: rotate(-5deg);
+  animation: growLinetoContactMe 1.2s ease-out 0.5s forwards;
+}
+@keyframes growLinetoContactMe {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 45.5rem;
+    opacity: 1;
+  }
+}
 body #hero #name__LineTo {
   left: 46.55%;
   top: 71.88%;
