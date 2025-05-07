@@ -157,6 +157,13 @@ body #hero.loaded #name, body #hero.loaded #jobTitle, body #hero.loaded #contact
   color: white;
   margin-top: 25rem;
 }
+#aboutMe .section__hidden {
+  opacity: 0;
+}
+#aboutMe .section__visible {
+  opacity: 1;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
 #aboutMe #aboutMe__circle {
   height: 5rem;
   width: 5rem;
@@ -168,32 +175,26 @@ body #hero.loaded #name, body #hero.loaded #jobTitle, body #hero.loaded #contact
   transform: rotate(130deg);
   left: 46.5%;
   top: 84.5%;
-  animation: growLineToAboutMe 1.2s ease-out 1.6s forwards;
-}
-@keyframes growLineToAboutMe {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
-  100% {
-    width: 17.6rem;
-    opacity: 1;
-  }
 }
 #aboutMe #aboutMe__SkillsGallery__LineTo {
   left: 49.3%;
   top: 84.8%;
   transform: rotate(42deg);
-  animation: growLineToSkillsGallery 1.2s ease-out 1.6s forwards;
+}
+@keyframes growLineToAboutMe {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 17.6rem;
+  }
 }
 @keyframes growLineToSkillsGallery {
   0% {
     width: 0;
-    opacity: 0;
   }
   100% {
     width: 21rem;
-    opacity: 1;
   }
 }
 #aboutMe #aboutMe__Contents {
