@@ -25,8 +25,26 @@ body .line {
 }
 body #hero {
   color: antiquewhite;
+  display: flex;
   position: relative;
   margin-bottom: 17rem;
+}
+body #hero #contactMe {
+  color: whitesmoke;
+  border: 3px solid antiquewhite;
+  right: 2rem;
+  top: 8rem;
+  position: absolute;
+  border-radius: 2rem;
+  padding: 2rem;
+  background-color: rgba(51, 47, 71, 0.918);
+}
+body #hero #contactMe .contactMe__links {
+  justify-content: center;
+  padding-left: 2.5rem;
+}
+body #hero #contactMe img {
+  height: 5rem;
 }
 body #hero #name {
   font-size: 10rem;
@@ -43,14 +61,14 @@ body #hero #jobTitle {
 body #hero #introCircle {
   height: 5rem;
   width: 5rem;
-  top: 95.15%;
-  left: 52.5%;
+  top: 78.9%;
+  left: 45.6%;
   background-color: rgba(250, 235, 215, 0.596);
 }
 body #hero #name__LineTo {
-  left: 52.5%;
-  top: 86.5%;
-  transform: rotate(-92.7deg);
+  left: 46.55%;
+  top: 71.88%;
+  transform: rotate(-65deg);
   animation: growLineToName 1.2s ease-out 0.5s forwards;
 }
 @keyframes growLineToName {
@@ -67,7 +85,7 @@ body #hero #name__LineUnder {
   background-color: rgb(255, 255, 255);
   transform: rotate(180deg);
   left: 52%;
-  top: 36.5%;
+  top: 32.5%;
   animation: growLineUnderName 1.5s ease-out 1.6s forwards;
 }
 @keyframes growLineUnderName {
@@ -81,9 +99,9 @@ body #hero #name__LineUnder {
   }
 }
 body #hero #jobTitle__LineTo {
-  left: 50.35%;
-  top: 96.45%;
-  transform: rotate(176deg);
+  left: 43.5%;
+  top: 80%;
+  transform: rotate(165deg);
   animation: growLineToJobTitle 1.2s ease-out 0.5s forwards;
 }
 @keyframes growLineToJobTitle {
@@ -92,14 +110,14 @@ body #hero #jobTitle__LineTo {
     opacity: 0;
   }
   100% {
-    width: 16.25rem;
+    width: 8.25rem;
     opacity: 1;
   }
 }
 body #hero #jobTitle__LineUnder {
   transform: rotate(180deg);
   left: 36.75%;
-  top: 100%;
+  top: 86%;
   animation: growLineUnderJobTitle 1.2s ease-out 1.6s forwards;
 }
 @keyframes growLineUnderJobTitle {
@@ -108,7 +126,7 @@ body #hero #jobTitle__LineUnder {
     opacity: 0;
   }
   100% {
-    width: 44rem;
+    width: 44.5rem;
     opacity: 1;
   }
 }
@@ -167,7 +185,7 @@ body #hero.loaded #name, body #hero.loaded #jobTitle {
   width: 50%;
   padding: 0.5rem;
   margin-left: 12rem;
-  background-color: rgba(3, 0, 27, 0.918);
+  background-color: rgba(51, 47, 71, 0.918);
   border-radius: 2rem;
   border: 0.3rem solid white;
 }
@@ -177,7 +195,7 @@ body #hero.loaded #name, body #hero.loaded #jobTitle {
   padding: 0.6rem;
   border: 0.3rem solid white;
   border-radius: 2rem;
-  background-color: rgba(129, 127, 139, 0.918);
+  background-color: rgba(51, 47, 71, 0.918);
 }
 #aboutMe #aboutMe__Contents #skillsGallery img {
   height: 4rem;
@@ -210,16 +228,13 @@ body #hero.loaded #name, body #hero.loaded #jobTitle {
   padding: 0.5rem;
   max-height: 30rem;
   font-size: medium;
-  background-color: rgba(7, 14, 51, 0.692);
+  background-color: rgba(51, 47, 71, 0.918);
 }
 #portfolioProjects .Project__Carousel .Project__List .Project__Card img {
   height: 15%;
 }
 #portfolioProjects .Project__Carousel .Project__List .Project__Card .project__blurb {
-  border: 3px solid plum;
-}
-#portfolioProjects .Project__Carousel .Project__List .Project__Card .project__links {
-  border: 3px solid white;
+  margin: 0.4rem;
 }
 #portfolioProjects .Project__Carousel .Project__List .Project__Card .project__links img {
   height: 3rem;
@@ -241,14 +256,6 @@ body #hero.loaded #name, body #hero.loaded #jobTitle {
 }
 #portfolioProjects .carousel__next {
   right: 1rem;
-}
-
-#contactMe {
-  color: whitesmoke;
-  border: 3px solid palegreen;
-}
-#contactMe img {
-  height: 4rem;
 }
 
 @keyframes pulseAnimation {

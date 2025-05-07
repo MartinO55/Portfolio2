@@ -30,9 +30,28 @@ body {
   #hero {
     //background-color: white;
     color: antiquewhite;
-
+    display: flex;
     position: relative;
     margin-bottom: 17rem;
+
+    #contactMe {
+      color: whitesmoke;
+      border: 3px solid antiquewhite;
+      right: 2rem;
+      top: 8rem;
+      position: absolute;
+      border-radius: 2rem;
+      padding: 2rem;
+      background-color: rgba(51, 47, 71, 0.918);
+
+      .contactMe__links {
+        justify-content: center;
+        padding-left: 2.5rem;
+      }
+      img {
+        height: 5rem;
+      }
+    }
     #name {
       font-size: 10rem;
       padding-bottom: 1rem;
@@ -48,36 +67,36 @@ body {
     #introCircle {
       height: 5rem;
       width: 5rem;
-      top: 95.15%;
-      left: 52.5%;
+      top: 78.9%;
+      left: 45.6%;
       background-color: rgba(250, 235, 215, 0.596);
     }
 
     #name__LineTo {
-      left: 52.5%;
-      top: 86.5%;
-      transform: rotate(-92.7deg);
+      left: 46.55%;
+      top: 71.88%;
+      transform: rotate(-65deg);
       @include growLine(growLineToName, 15.4rem, 1.2s, 0.5s);
     }
     #name__LineUnder {
       background-color: rgb(255, 255, 255);
       transform: rotate(180deg);
       left: 52%;
-      top: 36.5%;
+      top: 32.5%;
       @include growLine(growLineUnderName, 62.2rem, 1.5s, 1.6s);
     }
     #jobTitle__LineTo {
       //width: 20rem;
-      left: 50.35%;
-      top: 96.45%;
-      transform: rotate(176deg);
-      @include growLine(growLineToJobTitle, 16.25rem, 1.2s, 0.5s);
+      left: 43.5%;
+      top: 80%;
+      transform: rotate(165deg);
+      @include growLine(growLineToJobTitle, 8.25rem, 1.2s, 0.5s);
     }
     #jobTitle__LineUnder {
       transform: rotate(180deg);
       left: 36.75%;
-      top: 100%;
-      @include growLine(growLineUnderJobTitle, 44rem, 1.2s, 1.6s);
+      top: 86%;
+      @include growLine(growLineUnderJobTitle, 44.5rem, 1.2s, 1.6s);
     }
 
     &.loaded #name,
@@ -85,6 +104,8 @@ body {
       opacity: 1; // Fade in the text
       transition-delay: 3s; // Delay text appearance until circle animation finishes
     }
+
+    //this should be sent to the right side of the page with the hero?
   }
 }
 #aboutMe {
@@ -119,7 +140,7 @@ body {
       width: 50%;
       padding: 0.5rem;
       margin-left: 12rem;
-      background-color: rgba(3, 0, 27, 0.918);
+      background-color: rgba(51, 47, 71, 0.918);
       border-radius: 2rem;
       border: 0.3rem solid white;
     }
@@ -129,7 +150,7 @@ body {
       padding: 0.6rem;
       border: 0.3rem solid white;
       border-radius: 2rem;
-      background-color: rgba(129, 127, 139, 0.918);
+      background-color: rgba(51, 47, 71, 0.918);
 
       img {
         height: 4rem;
@@ -166,18 +187,19 @@ body {
         padding: 0.5rem;
         max-height: 30rem;
         font-size: medium;
-        background-color: rgba(7, 14, 51, 0.692);
+        background-color: rgba(51, 47, 71, 0.918);
 
         img {
           height: 15%;
         }
 
         .project__blurb {
-          border: 3px solid plum;
+          //border: 3px solid plum;
+          margin: 0.4rem;
         }
 
         .project__links {
-          border: 3px solid white;
+          //border: 3px solid white;
           img {
             height: 3rem;
           }
@@ -202,14 +224,6 @@ body {
   }
   .carousel__next {
     right: 1rem;
-  }
-}
-//this should be sent to the right side of the page with the hero?
-#contactMe {
-  color: whitesmoke;
-  border: 3px solid palegreen;
-  img {
-    height: 4rem;
   }
 }
 
