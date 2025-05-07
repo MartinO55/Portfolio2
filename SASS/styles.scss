@@ -124,22 +124,22 @@ body {
   #aboutMe__circle {
     height: 5rem;
     width: 5rem;
-    top: 80%;
-    left: 70%;
+    top: 81.5%;
+    left: 48%;
     background-color: rgba(250, 235, 215, 0.596);
   }
 
   #aboutMe__blurb__lineTo {
-    transform: rotate(150deg);
-    left: 66%;
-    top: 84%;
-    @include growLine(growLineToAboutMe, 20rem, 1.2s, 1.6s);
+    transform: rotate(130deg);
+    left: 46.5%;
+    top: 84.5%;
+    @include growLine(growLineToAboutMe, 17.6rem, 1.2s, 1.6s);
   }
   #aboutMe__SkillsGallery__LineTo {
-    left: 70%;
-    top: 84%;
-    transform: rotate(100deg);
-    @include growLine(growLineToSkillsGallery, 8rem, 1.2s, 1.6s);
+    left: 49.3%;
+    top: 84.8%;
+    transform: rotate(42deg);
+    @include growLine(growLineToSkillsGallery, 21rem, 1.2s, 1.6s);
   }
 
   #aboutMe__Contents {
