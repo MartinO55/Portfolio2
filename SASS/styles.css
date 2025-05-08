@@ -227,6 +227,13 @@ body #hero.loaded #name, body #hero.loaded #jobTitle, body #hero.loaded #contact
   padding-right: 2rem;
   margin: 2rem;
 }
+#portfolioProjects #Projects__circle {
+  height: 5rem;
+  width: 5rem;
+  top: 202.5%;
+  left: 61.7%;
+  background-color: rgba(250, 235, 215, 0.596);
+}
 #portfolioProjects .Project__Carousel {
   position: relative;
   overflow: hidden;
@@ -273,10 +280,14 @@ body #hero.loaded #name, body #hero.loaded #jobTitle, body #hero.loaded #contact
   z-index: 2;
 }
 #portfolioProjects .carousel__prev {
-  left: 1rem;
+  left: 1.5rem;
+  animation: pulseAnimation 2s ease-in-out infinite;
+  border-radius: 1rem;
 }
 #portfolioProjects .carousel__next {
-  right: 1rem;
+  right: 1.5rem;
+  animation: pulseAnimation 2s ease-in-out infinite;
+  border-radius: 1rem;
 }
 
 @keyframes pulseAnimation {
