@@ -47,13 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("scroll", () => {
-    const revealPoint = aboutSection.getBoundingClientRect().top;
+    const aboutRevealPoint = aboutSection.getBoundingClientRect().top;
+    const projectsRevealPoint = portfolioSection.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
-    if (revealPoint < windowHeight - 100) {
+    if (aboutRevealPoint < windowHeight - 100) {
       revealAboutSection();
     }
-    if (revealPoint < windowHeight - 200) {
+    if (projectsRevealPoint < windowHeight - 100) {
       revealPortfolioSection();
     }
   });
@@ -68,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     revealPortfolioSection();
   });
 
-  const cardWidth = track.querySelector(".Project__Card").offsetWidth + 32; // card + gap
+  const cardWidth = track.querySelector(".Project__Card").offsetWidth + 32;
 
   next.addEventListener("click", () => {
     track.scrollBy({ left: cardWidth, behavior: "smooth" });
