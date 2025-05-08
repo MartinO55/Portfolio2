@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "aboutMe__SkillsGallery__LineTo"
   );
 
+  //okay, so we should probably refactor this to make it reuseable
   function revealAboutSection() {
     aboutSection.classList.remove("section__hidden");
     aboutSection.classList.add("section__visible");

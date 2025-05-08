@@ -222,7 +222,9 @@ body #hero.loaded #name, body #hero.loaded #jobTitle, body #hero.loaded #contact
 
 #portfolioProjects {
   color: whitesmoke;
-  padding: 1rem;
+  padding-top: 10rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin: 2rem;
 }
 #portfolioProjects .Project__Carousel {
