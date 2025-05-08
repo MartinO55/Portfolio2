@@ -167,26 +167,26 @@ body #hero.loaded #name, body #hero.loaded #jobTitle, body #hero.loaded #contact
 #aboutMe #aboutMe__circle {
   height: 5rem;
   width: 5rem;
-  top: 81.5%;
-  left: 48%;
+  top: 85.1%;
+  left: 50.5%;
   background-color: rgba(250, 235, 215, 0.596);
 }
 #aboutMe #aboutMe__blurb__lineTo {
-  transform: rotate(130deg);
-  left: 46.5%;
-  top: 84.5%;
+  transform: rotate(126deg);
+  left: 49.6%;
+  top: 89%;
 }
 #aboutMe #aboutMe__SkillsGallery__LineTo {
-  left: 49.3%;
-  top: 84.8%;
-  transform: rotate(42deg);
+  left: 51.8%;
+  top: 88.5%;
+  transform: rotate(45deg);
 }
 @keyframes growLineToAboutMe {
   0% {
     width: 0;
   }
   100% {
-    width: 17.6rem;
+    width: 13.7rem;
   }
 }
 @keyframes growLineToSkillsGallery {
@@ -194,7 +194,7 @@ body #hero.loaded #name, body #hero.loaded #jobTitle, body #hero.loaded #contact
     width: 0;
   }
   100% {
-    width: 21rem;
+    width: 17.2rem;
   }
 }
 #aboutMe #aboutMe__Contents {
