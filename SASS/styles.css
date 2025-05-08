@@ -221,11 +221,38 @@ body #hero.loaded #name, body #hero.loaded #jobTitle, body #hero.loaded #contact
 }
 
 #portfolioProjects {
-  color: whitesmoke;
+  color: antiquewhite;
   padding-top: 10rem;
   padding-left: 2rem;
   padding-right: 2rem;
   margin: 2rem;
+}
+#portfolioProjects .section__hidden {
+  opacity: 0;
+}
+#portfolioProjects .section__visible {
+  opacity: 1;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+#portfolioProjects .Projects__Heading {
+  color: antiquewhite;
+  border: 3px solid antiquewhite;
+  text-align: center;
+  background-color: rgba(51, 47, 71, 0.918);
+  border-radius: 2rem;
+}
+#portfolioProjects .Projects__Heading #Projects__Heading__lineTo {
+  transform: rotate(95deg);
+  left: 61.5%;
+  top: 206.8%;
+}
+@keyframes growLineToProjectsHeading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 2.8rem;
+  }
 }
 #portfolioProjects #Projects__circle {
   height: 5rem;
