@@ -28,7 +28,6 @@ body {
   }
 
   #hero {
-    //background-color: white;
     color: antiquewhite;
     display: flex;
     position: relative;
@@ -69,21 +68,21 @@ body {
     #introCircle {
       height: 5rem;
       width: 5rem;
-      top: 78.9%;
-      left: 45.6%;
+      top: 82.3%;
+      left: 48%;
       background-color: rgba(250, 235, 215, 0.596);
     }
     #contactMe__LineTo {
-      top: 77.7%;
-      left: 47.7%;
-      transform: rotate(-5deg);
+      top: 79%;
+      left: 50%;
+      transform: rotate(-20deg);
       @include growLine(growLinetoContactMe, 45.5rem, 2.5s, 0.5s);
     }
 
     #name__LineTo {
-      left: 46.55%;
-      top: 71.88%;
-      transform: rotate(-65deg);
+      left: 48.56%;
+      top: 74.8%;
+      transform: rotate(-75deg);
       @include growLine(growLineToName, 15.4rem, 1.2s, 0.5s);
     }
     #name__LineUnder {
@@ -94,11 +93,10 @@ body {
       @include growLine(growLineUnderName, 62.2rem, 1.5s, 1.6s);
     }
     #jobTitle__LineTo {
-      //width: 20rem;
-      left: 43.5%;
-      top: 80%;
-      transform: rotate(165deg);
-      @include growLine(growLineToJobTitle, 8.25rem, 1.2s, 0.5s);
+      left: 45.89%;
+      top: 83.3%;
+      transform: rotate(175deg);
+      @include growLine(growLineToJobTitle, 11rem, 1.2s, 0.5s);
     }
     #jobTitle__LineUnder {
       transform: rotate(180deg);

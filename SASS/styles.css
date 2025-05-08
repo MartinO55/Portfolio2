@@ -63,14 +63,14 @@ body #hero #jobTitle {
 body #hero #introCircle {
   height: 5rem;
   width: 5rem;
-  top: 78.9%;
-  left: 45.6%;
+  top: 82.3%;
+  left: 48%;
   background-color: rgba(250, 235, 215, 0.596);
 }
 body #hero #contactMe__LineTo {
-  top: 77.7%;
-  left: 47.7%;
-  transform: rotate(-5deg);
+  top: 79%;
+  left: 50%;
+  transform: rotate(-20deg);
   animation: growLinetoContactMe 2.5s ease-out 0.5s forwards;
 }
 @keyframes growLinetoContactMe {
@@ -84,9 +84,9 @@ body #hero #contactMe__LineTo {
   }
 }
 body #hero #name__LineTo {
-  left: 46.55%;
-  top: 71.88%;
-  transform: rotate(-65deg);
+  left: 48.56%;
+  top: 74.8%;
+  transform: rotate(-75deg);
   animation: growLineToName 1.2s ease-out 0.5s forwards;
 }
 @keyframes growLineToName {
@@ -117,9 +117,9 @@ body #hero #name__LineUnder {
   }
 }
 body #hero #jobTitle__LineTo {
-  left: 43.5%;
-  top: 80%;
-  transform: rotate(165deg);
+  left: 45.89%;
+  top: 83.3%;
+  transform: rotate(175deg);
   animation: growLineToJobTitle 1.2s ease-out 0.5s forwards;
 }
 @keyframes growLineToJobTitle {
@@ -128,7 +128,7 @@ body #hero #jobTitle__LineTo {
     opacity: 0;
   }
   100% {
-    width: 8.25rem;
+    width: 11rem;
     opacity: 1;
   }
 }
