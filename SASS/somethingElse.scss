@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+
+  .centeringContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .gameContainer {
+      display: inline-block;
+
+      .headerContainer {
+        position: relative;
+
+        .UIBarHolder {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          padding: 20px;
+          .playerHealthBar__Holder {
+            position: relative;
+            height: 30px;
+            width: 100%;
+            .playerHealthBar {
+              background-color: yellow;
+              height: 30px;
+              display: flex;
+              justify-content: flex-end;
+            }
+            .playerHealthBar__Cover {
+              background-color: blue;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+            }
+          }
+
+          .timer {
+            display: flex;
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+          }
+          .enemyHealthBar__Holder {
+            position: relative;
+            height: 30px;
+            width: 100%;
+            .enemyHealthBar {
+              background-color: yellow;
+              height: 30px;
+            }
+            .enemyHealthBar__Cover {
+              background-color: blue;
+              position: absolute;
+              top: 0;
+              right: 0;
+              left: 0;
+              bottom: 0;
+            }
+          }
+        }
+      }
+    }
+    .UIScript {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+  }
+}
