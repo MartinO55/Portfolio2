@@ -270,7 +270,7 @@ body {
         background-color: rgba(51, 47, 71, 0.918);
 
         img {
-          height: 15%;
+          height: 20%;
         }
 
         .project__blurb {
@@ -303,7 +303,7 @@ body {
     border-radius: 1rem;
   }
   .carousel__next {
-    right: 1.5rem;
+    right: -1.3rem;
     animation: pulseAnimation 2s ease-in-out infinite;
     border-radius: 1rem;
   }

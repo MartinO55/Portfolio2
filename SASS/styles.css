@@ -293,7 +293,7 @@ body #somethingElseCircle {
   background-color: rgba(51, 47, 71, 0.918);
 }
 #portfolioProjects .Project__Carousel .Project__List .Project__Card img {
-  height: 15%;
+  height: 20%;
 }
 #portfolioProjects .Project__Carousel .Project__List .Project__Card .project__blurb {
   margin: 0.4rem;
@@ -319,7 +319,7 @@ body #somethingElseCircle {
   border-radius: 1rem;
 }
 #portfolioProjects .carousel__next {
-  right: 1.5rem;
+  right: -1.3rem;
   animation: pulseAnimation 2s ease-in-out infinite;
   border-radius: 1rem;
 }
