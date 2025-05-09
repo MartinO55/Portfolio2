@@ -153,10 +153,10 @@ body #hero.loaded #name, body #hero.loaded #jobTitle, body #hero.loaded #contact
   transition-delay: 3s;
 }
 body #somethingElseCircle {
-  height: 5rem;
-  width: 5rem;
-  top: 202.5%;
-  left: 10.7%;
+  height: 0.5rem;
+  width: 0.5rem;
+  top: 286%;
+  left: 3%;
   background-color: rgba(250, 235, 215, 0.596);
 }
 
