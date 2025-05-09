@@ -68,20 +68,20 @@ body {
     #introCircle {
       height: 5rem;
       width: 5rem;
-      top: 82.3%;
-      left: 48%;
+      top: 29rem;
+      left: 57rem;
       background-color: rgba(250, 235, 215, 0.596);
     }
     #contactMe__LineTo {
-      top: 79%;
-      left: 50%;
+      top: 27rem;
+      left: 58.5rem;
       transform: rotate(-20deg);
       @include growLine(growLinetoContactMe, 45.5rem, 2.5s, 0.5s);
     }
 
     #name__LineTo {
-      left: 48.56%;
-      top: 74.8%;
+      left: 57.4rem;
+      top: 26.3rem;
       transform: rotate(-75deg);
       @include growLine(growLineToName, 15.4rem, 1.2s, 0.5s);
     }

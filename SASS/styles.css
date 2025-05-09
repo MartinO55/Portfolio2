@@ -63,13 +63,13 @@ body #hero #jobTitle {
 body #hero #introCircle {
   height: 5rem;
   width: 5rem;
-  top: 82.3%;
-  left: 48%;
+  top: 29rem;
+  left: 57rem;
   background-color: rgba(250, 235, 215, 0.596);
 }
 body #hero #contactMe__LineTo {
-  top: 79%;
-  left: 50%;
+  top: 27rem;
+  left: 58.5rem;
   transform: rotate(-20deg);
   animation: growLinetoContactMe 2.5s ease-out 0.5s forwards;
 }
@@ -84,8 +84,8 @@ body #hero #contactMe__LineTo {
   }
 }
 body #hero #name__LineTo {
-  left: 48.56%;
-  top: 74.8%;
+  left: 57.4rem;
+  top: 26.3rem;
   transform: rotate(-75deg);
   animation: growLineToName 1.2s ease-out 0.5s forwards;
 }
