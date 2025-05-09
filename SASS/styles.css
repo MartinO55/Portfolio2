@@ -102,8 +102,8 @@ body #hero #name__LineTo {
 body #hero #name__LineUnder {
   background-color: rgb(255, 255, 255);
   transform: rotate(180deg);
-  left: 52%;
-  top: 32.5%;
+  left: 61.3rem;
+  top: 11.5rem;
   animation: growLineUnderName 1.5s ease-out 1.6s forwards;
 }
 @keyframes growLineUnderName {
@@ -117,8 +117,8 @@ body #hero #name__LineUnder {
   }
 }
 body #hero #jobTitle__LineTo {
-  left: 45.89%;
-  top: 83.3%;
+  left: 54.4rem;
+  top: 29.2rem;
   transform: rotate(175deg);
   animation: growLineToJobTitle 1.2s ease-out 0.5s forwards;
 }
@@ -134,8 +134,8 @@ body #hero #jobTitle__LineTo {
 }
 body #hero #jobTitle__LineUnder {
   transform: rotate(180deg);
-  left: 36.75%;
-  top: 86%;
+  left: 43.5rem;
+  top: 30.1rem;
   animation: growLineUnderJobTitle 1.2s ease-out 1.6s forwards;
 }
 @keyframes growLineUnderJobTitle {
@@ -155,8 +155,8 @@ body #hero.loaded #name, body #hero.loaded #jobTitle, body #hero.loaded #contact
 body #somethingElseCircle {
   height: 0.5rem;
   width: 0.5rem;
-  top: 286%;
-  left: 3%;
+  top: 50rem;
+  left: 2rem;
   background-color: rgba(250, 235, 215, 0.596);
 }
 
