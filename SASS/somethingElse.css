@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+* .centeringContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+* .centeringContainer .gameContainer {
+  display: inline-block;
+}
+* .centeringContainer .gameContainer .headerContainer {
+  position: relative;
+}
+* .centeringContainer .gameContainer .headerContainer .UIBarHolder {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+* .centeringContainer .gameContainer .headerContainer .UIBarHolder .playerHealthBar__Holder {
+  position: relative;
+  height: 30px;
+  width: 100%;
+}
+* .centeringContainer .gameContainer .headerContainer .UIBarHolder .playerHealthBar__Holder .playerHealthBar {
+  background-color: yellow;
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+* .centeringContainer .gameContainer .headerContainer .UIBarHolder .playerHealthBar__Holder .playerHealthBar__Cover {
+  background-color: blue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+* .centeringContainer .gameContainer .headerContainer .UIBarHolder .timer {
+  display: flex;
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+* .centeringContainer .gameContainer .headerContainer .UIBarHolder .enemyHealthBar__Holder {
+  position: relative;
+  height: 30px;
+  width: 100%;
+}
+* .centeringContainer .gameContainer .headerContainer .UIBarHolder .enemyHealthBar__Holder .enemyHealthBar {
+  background-color: yellow;
+  height: 30px;
+}
+* .centeringContainer .gameContainer .headerContainer .UIBarHolder .enemyHealthBar__Holder .enemyHealthBar__Cover {
+  background-color: blue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+* .centeringContainer .UIScript {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}/*# sourceMappingURL=somethingElse.css.map */
