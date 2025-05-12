@@ -1,44 +1,84 @@
-$breakpoint-lg: 1200px;
-$breakpoint-md: 992px;
+$breakpoint-md: 1500px;
 $breakpoint-sm: 768px;
-
-// Desktop (default styles, no media query needed)
 
 // Tablet styles
 @media (max-width: $breakpoint-md) {
   body {
-    font-size: 1.2rem;
-
     .circle {
       display: none;
     }
     .line {
       display: none;
     }
-  }
 
-  .Project__Card {
-    width: 40%;
-  }
+    #hero {
+      flex-direction: column;
 
-  #aboutMe__Contents {
-    flex-direction: column;
-    align-items: center;
+      margin-bottom: 10rem;
 
-    #aboutMe__blurb,
-    #skillsGallery {
-      width: 80%;
-      margin-left: 0;
-      margin-bottom: 2rem;
+      .landingPage__name {
+        #name {
+          font-size: 5rem;
+        }
+
+        #jobTitle {
+          font-size: 3rem;
+        }
+      }
+
+      #contactMe {
+        margin-top: 3rem;
+        align-items: center;
+        width: 3.5rem;
+        right: 0.5rem;
+        top: 3rem;
+        padding: 2.5rem;
+        position: relative;
+        img {
+          height: 4rem !important;
+        }
+
+        .contactMe__heading {
+          font-size: 1rem;
+        }
+        .contactMe__links {
+          display: contents;
+        }
+      }
     }
-  }
+    #aboutMe__Contents {
+      flex-direction: column;
+      align-items: center;
 
-  #hero #name {
-    font-size: 6rem;
-  }
+      #aboutMe__blurb,
+      #skillsGallery {
+        font-size: 1rem;
+        width: 50rem !important;
+        margin-left: 0rem !important;
+        margin-bottom: 2rem;
+      }
+    }
+    #portfolioProjects {
+      padding-left: 0rem !important;
+      padding-right: 0rem !important;
+      margin: 0rem !important;
 
-  #hero #jobTitle {
-    font-size: 4rem;
+      .Project__Carousel {
+        padding: 0rem !important;
+      }
+      .Project__Card {
+        width: 16rem !important;
+        margin-left: 2.7rem !important;
+        max-height: 50rem !important;
+        img {
+          height: 15% !important;
+        }
+      }
+      .carousel__prev,
+      .carousel__next {
+        font-size: 1.2rem;
+      }
+    }
   }
 }
 
@@ -54,7 +94,7 @@ $breakpoint-sm: 768px;
 
     #hero {
       flex-direction: column;
-      //align-items: center;
+
       margin-bottom: 10rem;
 
       .landingPage__name {

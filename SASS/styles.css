@@ -1,33 +1,70 @@
 /*so this is the animation mixin that handles the grow line function - I noticed alot of repition happening in the keyframes and abstracted a bunch here.
 Its now a 'function' that creates a new animation set in the CSS everytime you call it in the SCSS file*/
-@media (max-width: 992px) {
-  body {
-    font-size: 1.2rem;
-  }
+@media (max-width: 1500px) {
   body .circle {
     display: none;
   }
   body .line {
     display: none;
   }
-  .Project__Card {
-    width: 40%;
+  body #hero {
+    flex-direction: column;
+    margin-bottom: 10rem;
   }
-  #aboutMe__Contents {
+  body #hero .landingPage__name #name {
+    font-size: 5rem;
+  }
+  body #hero .landingPage__name #jobTitle {
+    font-size: 3rem;
+  }
+  body #hero #contactMe {
+    margin-top: 3rem;
+    align-items: center;
+    width: 3.5rem;
+    right: 0.5rem;
+    top: 3rem;
+    padding: 2.5rem;
+    position: relative;
+  }
+  body #hero #contactMe img {
+    height: 4rem !important;
+  }
+  body #hero #contactMe .contactMe__heading {
+    font-size: 1rem;
+  }
+  body #hero #contactMe .contactMe__links {
+    display: contents;
+  }
+  body #aboutMe__Contents {
     flex-direction: column;
     align-items: center;
   }
-  #aboutMe__Contents #aboutMe__blurb,
-  #aboutMe__Contents #skillsGallery {
-    width: 80%;
-    margin-left: 0;
+  body #aboutMe__Contents #aboutMe__blurb,
+  body #aboutMe__Contents #skillsGallery {
+    font-size: 1rem;
+    width: 50rem !important;
+    margin-left: 0rem !important;
     margin-bottom: 2rem;
   }
-  #hero #name {
-    font-size: 6rem;
+  body #portfolioProjects {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+    margin: 0rem !important;
   }
-  #hero #jobTitle {
-    font-size: 4rem;
+  body #portfolioProjects .Project__Carousel {
+    padding: 0rem !important;
+  }
+  body #portfolioProjects .Project__Card {
+    width: 16rem !important;
+    margin-left: 2.7rem !important;
+    max-height: 50rem !important;
+  }
+  body #portfolioProjects .Project__Card img {
+    height: 15% !important;
+  }
+  body #portfolioProjects .carousel__prev,
+  body #portfolioProjects .carousel__next {
+    font-size: 1.2rem;
   }
 }
 @media (max-width: 768px) {
