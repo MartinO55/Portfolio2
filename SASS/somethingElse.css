@@ -76,4 +76,11 @@
   bottom: 0;
   right: 0;
   left: 0;
+}
+* #restartButton {
+  position: relative;
+  transform: translate(57.8rem, -38.5rem);
+  display: none;
+  margin-top: 1rem;
+  font-size: 1.2rem;
 }/*# sourceMappingURL=somethingElse.css.map */

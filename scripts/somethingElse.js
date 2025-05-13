@@ -7,6 +7,7 @@ canvas.height = 576;
 c.fillRect(0, 0, canvas.width, canvas.height);
 
 const gravity = 0.7;
+let gameOver = false;
 
 class Sprite {
   constructor({ position, velocity, color = "red", offset }) {
@@ -98,7 +99,11 @@ function rectangularCollision({ attacker, defender }) {
 
 function determineWinner({ player, enemy, timerID }) {
   clearTimeout(timerID);
+  gameOver = true;
+  const restartButton = document.querySelector("#restartButton");
+
   document.querySelector("#UIScriptOverlay").style.display = "flex";
+  restartButton.style.display = "inline-block";
   if (player.health === enemy.health) {
     document.querySelector("#UIScriptOverlay").innerHTML = "Draw";
   } else if (player.health > enemy.health) {
@@ -108,7 +113,7 @@ function determineWinner({ player, enemy, timerID }) {
   }
 }
 
-let timer = 1;
+let timer = 100;
 let timerID;
 function decreaseTimer() {
   if (timer > 0) {
@@ -132,16 +137,33 @@ function animate() {
   player.velocity.x = 0;
   enemy.velocity.x = 0;
   //player 1 move
-  if (keys.a.pressed && player.lastKey === "a") {
-    player.velocity.x = -5;
-  } else if (keys.d.pressed && player.lastKey === "d") {
-    player.velocity.x = 5;
+  if (gameOver == false) {
+    if (keys.a.pressed && player.lastKey === "a") {
+      player.velocity.x = -5;
+    } else if (keys.d.pressed && player.lastKey === "d") {
+      player.velocity.x = 5;
+    }
   }
-  //player2 move
-  if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
-    enemy.velocity.x = -5;
-  } else if (keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight") {
-    enemy.velocity.x = 5;
+
+  //note to self - add a switch here to allow for 2 player control
+  // player2 move
+  // if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
+  //   enemy.velocity.x = -5;
+  // } else if (keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight") {
+  //   enemy.velocity.x = 5;
+  // }
+
+  //AI Movement
+  let distanceX = player.position.x - enemy.position.x;
+  if (gameOver == false) {
+    if (Math.abs(distanceX) > 100) {
+      enemy.velocity.x = distanceX > 0 ? 2 : -2;
+    } else {
+      enemy.velocity.x = 0;
+    }
+    if (Math.random() < 0.02 && !enemy.isAttacking) {
+      enemy.attack();
+    }
   }
 
   //check for attack hits
@@ -174,37 +196,39 @@ animate();
 
 window.addEventListener("keydown", (event) => {
   //console.log(event.key);
-  switch (event.key) {
-    case "d":
-      keys.d.pressed = true;
-      player.lastKey = "d";
-      break;
-    case "a":
-      keys.a.pressed = true;
-      player.lastKey = "a";
-      break;
-    case "w":
-      //to fix multi jumping I think we need to add the sprites so you can check if sprite.jumping !=true
-      player.velocity.y = -20;
-      break;
-    case " ":
-      player.attack();
-      break;
+  if (gameOver == false) {
+    switch (event.key) {
+      case "d":
+        keys.d.pressed = true;
+        player.lastKey = "d";
+        break;
+      case "a":
+        keys.a.pressed = true;
+        player.lastKey = "a";
+        break;
+      case "w":
+        //to fix multi jumping I think we need to add the sprites so you can check if sprite.jumping !=true
+        player.velocity.y = -20;
+        break;
+      case " ":
+        player.attack();
+        break;
 
-    case "ArrowRight":
-      keys.ArrowRight.pressed = true;
-      enemy.lastKey = "ArrowRight";
-      break;
-    case "ArrowLeft":
-      keys.ArrowLeft.pressed = true;
-      enemy.lastKey = "ArrowLeft";
-      break;
-    case "ArrowUp":
-      enemy.velocity.y = -20;
-      break;
-    case "ArrowDown":
-      enemy.attack();
-      break;
+      case "ArrowRight":
+        keys.ArrowRight.pressed = true;
+        enemy.lastKey = "ArrowRight";
+        break;
+      case "ArrowLeft":
+        keys.ArrowLeft.pressed = true;
+        enemy.lastKey = "ArrowLeft";
+        break;
+      case "ArrowUp":
+        enemy.velocity.y = -20;
+        break;
+      case "ArrowDown":
+        enemy.attack();
+        break;
+    }
   }
 });
 window.addEventListener("keyup", (event) => {
@@ -223,4 +247,25 @@ window.addEventListener("keyup", (event) => {
       keys.a.pressed = false;
       break;
   }
+});
+
+document.querySelector("#restartButton").addEventListener("click", () => {
+  player.health = 100;
+  enemy.health = 100;
+  document.querySelector("#playerHealth").style.width = "100%";
+  document.querySelector("#enemyHealth").style.width = "100%";
+
+  player.position.x = 0;
+  player.position.y = 0;
+  player.velocity = { x: 0, y: 0 };
+
+  enemy.position.x = 400;
+  enemy.position.y = 100;
+  enemy.velocity = { x: 0, y: 0 };
+
+  document.querySelector("#UIScriptOverlay").style.display = "none";
+
+  timer = 100;
+  gameOver = false;
+  decreaseTimer();
 });
