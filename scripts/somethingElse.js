@@ -237,21 +237,21 @@ function animate() {
   // }
 
   //AI Movement
-  // let distanceX = player.position.x - enemy.position.x;
-  // if (!gameOver) {
-  //   if (Math.abs(distanceX) > 100) {
-  //     enemy.velocity.x = distanceX > 0 ? 2 : -2;
-  //   } else {
-  //     enemy.velocity.x = 0;
-  //   }
-  //   if (
-  //     Math.abs(distanceX) < 120 &&
-  //     Math.random() < 0.02 &&
-  //     !enemy.isAttacking
-  //   ) {
-  //     enemy.attack();
-  //   }
-  // }
+  let distanceX = player.position.x - enemy.position.x;
+  if (!gameOver) {
+    if (Math.abs(distanceX) > 100) {
+      enemy.velocity.x = distanceX > 0 ? 2 : -2;
+    } else {
+      enemy.velocity.x = 0;
+    }
+    if (
+      Math.abs(distanceX) < 120 &&
+      Math.random() < 0.02 &&
+      !enemy.isAttacking
+    ) {
+      enemy.attack();
+    }
+  }
 
   //check for attack hits
   if (
