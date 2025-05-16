@@ -169,12 +169,28 @@ const player = new Sprite({
       imageSrc: "./somethingElseSprites/Player1/Idle.png",
       framesMax: 8,
     },
-    run: {},
-    jump: {},
-    fall: {},
-    attack1: {},
-    takeHit: {},
-    Death: {},
+    run: {
+      imageSrc: "./somethingElseSprites/Player1/Run.png",
+      framesMax: 8,
+    },
+    jump: { imageSrc: "./somethingElseSprites/Player1/Jump.png", framesMax: 2 },
+    fall: { imageSrc: "./somethingElseSprites/Player1/Fall.png", framesMax: 2 },
+    attack1: {
+      imageSrc: "./somethingElseSprites/Player1/Attack1.png",
+      framesMax: 6,
+    },
+    attack2: {
+      imageSrc: "./somethingElseSprites/Player1/Attack2.png",
+      framesMax: 6,
+    },
+    takeHit: {
+      imageSrc: "./somethingElseSprites/Player1/Take Hit.png",
+      framesMax: 4,
+    },
+    Death: {
+      imageSrc: "./somethingElseSprites/Player1/Death.png",
+      framesMax: 6,
+    },
   },
 });
 
@@ -188,12 +204,25 @@ const enemy = new Sprite({
   scale: 1.5,
   animations: {
     idle: { imageSrc: "./somethingElseSprites/Player2/Idle.png", framesMax: 4 },
-    run: {},
-    jump: {},
-    fall: {},
-    attack1: {},
-    takeHit: {},
-    Death: {},
+    run: { imageSrc: "./somethingElseSprites/Player2/Run.png", framesMax: 8 },
+    jump: { imageSrc: "./somethingElseSprites/Player2/Jump.png", framesMax: 2 },
+    fall: { imageSrc: "./somethingElseSprites/Player2/Fall.png", framesMax: 2 },
+    attack1: {
+      imageSrc: "./somethingElseSprites/Player2/Attack1.png",
+      framesMax: 4,
+    },
+    attack2: {
+      imageSrc: "./somethingElseSprites/Player2/Attack2.png",
+      framesMax: 4,
+    },
+    takeHit: {
+      imageSrc: "./somethingElseSprites/Player2/Take hit.png",
+      framesMax: 3,
+    },
+    Death: {
+      imageSrc: "./somethingElseSprites/Player2/Death.png",
+      framesMax: 7,
+    },
   },
 });
 
