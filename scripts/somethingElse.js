@@ -60,6 +60,10 @@ class Sprite {
       this.isAttacking = false;
     }, 100);
   }
+
+  isOnGround() {
+    return this.position.y + this.height >= canvas.height;
+  }
 }
 
 const player = new Sprite({
@@ -137,7 +141,7 @@ function animate() {
   player.velocity.x = 0;
   enemy.velocity.x = 0;
   //player 1 move
-  if (gameOver == false) {
+  if (!gameOver) {
     if (keys.a.pressed && player.lastKey === "a") {
       player.velocity.x = -5;
     } else if (keys.d.pressed && player.lastKey === "d") {
@@ -155,13 +159,17 @@ function animate() {
 
   //AI Movement
   let distanceX = player.position.x - enemy.position.x;
-  if (gameOver == false) {
+  if (!gameOver) {
     if (Math.abs(distanceX) > 100) {
       enemy.velocity.x = distanceX > 0 ? 2 : -2;
     } else {
       enemy.velocity.x = 0;
     }
-    if (Math.random() < 0.02 && !enemy.isAttacking) {
+    if (
+      Math.abs(distanceX) < 120 &&
+      Math.random() < 0.02 &&
+      !enemy.isAttacking
+    ) {
       enemy.attack();
     }
   }
@@ -196,7 +204,7 @@ animate();
 
 window.addEventListener("keydown", (event) => {
   //console.log(event.key);
-  if (gameOver == false) {
+  if (!gameOver) {
     switch (event.key) {
       case "d":
         keys.d.pressed = true;
@@ -207,9 +215,9 @@ window.addEventListener("keydown", (event) => {
         player.lastKey = "a";
         break;
       case "w":
-        //to fix multi jumping I think we need to add the sprites so you can check if sprite.jumping !=true
-        player.velocity.y = -20;
+        if (player.isOnGround()) player.velocity.y = -20;
         break;
+
       case " ":
         player.attack();
         break;
@@ -223,7 +231,7 @@ window.addEventListener("keydown", (event) => {
         enemy.lastKey = "ArrowLeft";
         break;
       case "ArrowUp":
-        enemy.velocity.y = -20;
+        if (enemy.isOnGround()) enemy.velocity.y = -20;
         break;
       case "ArrowDown":
         enemy.attack();
