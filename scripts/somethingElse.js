@@ -35,11 +35,27 @@ class Background {
 }
 
 class Sprite {
-  constructor({ position, velocity, color = "red", offset, imageSrc }) {
+  constructor({
+    position,
+    velocity,
+    color = "red",
+    offset = { x: 0, y: 0 },
+    imageSrc,
+    scale = 1,
+    framesMax = 1,
+  }) {
+    this.image = new Image();
+    this.image.src = imageSrc;
+    this.scale = scale;
     this.position = position;
     this.velocity = velocity;
-    this.width = 50;
-    this.height = 150;
+    this.width = this.image.width * this.scale;
+    this.height = this.image.height * this.scale;
+    this.framesMax = framesMax;
+    this.offset = offset;
+    this.framesCurrent = 0;
+    this.framesElapsed = 0;
+    this.framesHold = 5;
     this.lastKey;
     this.attackBox = {
       position: { x: this.position.x, y: this.position.y },
@@ -50,19 +66,20 @@ class Sprite {
     this.color = color;
     this.isAttacking;
     this.health = 100;
-
-    this.image = new Image();
-    this.image.src = imageSrc;
   }
 
   draw() {
     if (this.image.complete) {
       c.drawImage(
         this.image,
-        this.position.x,
-        this.position.y,
-        this.width,
-        this.height
+        this.framesCurrent * (this.image.width / this.framesMax),
+        0,
+        this.image.width / this.framesMax,
+        this.image.height,
+        this.position.x - this.offset.x,
+        this.position.y - this.offset.y,
+        (this.width / this.framesMax) * this.scale,
+        this.height * this.scale
       );
     } else {
       c.fillStyle = this.color;
@@ -80,8 +97,22 @@ class Sprite {
     }
   }
 
+  animate() {
+    this.framesElapsed++;
+
+    if (this.framesElapsed % this.framesHold === 0) {
+      if (this.framesCurrent < this.framesMax - 1) {
+        this.framesCurrent++;
+      } else {
+        this.framesCurrent = 0;
+      }
+    }
+  }
+
   update() {
     this.draw();
+    this.animate();
+
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
     this.attackBox.position.y = this.position.y;
 
@@ -114,6 +145,8 @@ const player = new Sprite({
   velocity: { x: 0, y: 0 },
   offset: { x: 0, y: 0 },
   imageSrc: "./somethingElseSprites/Player1/Idle.png",
+  framesMax: 8,
+  scale: 1.5,
 });
 
 const enemy = new Sprite({
@@ -122,6 +155,8 @@ const enemy = new Sprite({
   offset: { x: -50, y: 0 },
   color: "blue",
   imageSrc: "./somethingElseSprites/Player2/Idle.png",
+  framesMax: 4,
+  scale: 1.5,
 });
 
 const keys = {
@@ -202,21 +237,21 @@ function animate() {
   // }
 
   //AI Movement
-  let distanceX = player.position.x - enemy.position.x;
-  if (!gameOver) {
-    if (Math.abs(distanceX) > 100) {
-      enemy.velocity.x = distanceX > 0 ? 2 : -2;
-    } else {
-      enemy.velocity.x = 0;
-    }
-    if (
-      Math.abs(distanceX) < 120 &&
-      Math.random() < 0.02 &&
-      !enemy.isAttacking
-    ) {
-      enemy.attack();
-    }
-  }
+  // let distanceX = player.position.x - enemy.position.x;
+  // if (!gameOver) {
+  //   if (Math.abs(distanceX) > 100) {
+  //     enemy.velocity.x = distanceX > 0 ? 2 : -2;
+  //   } else {
+  //     enemy.velocity.x = 0;
+  //   }
+  //   if (
+  //     Math.abs(distanceX) < 120 &&
+  //     Math.random() < 0.02 &&
+  //     !enemy.isAttacking
+  //   ) {
+  //     enemy.attack();
+  //   }
+  // }
 
   //check for attack hits
   if (
