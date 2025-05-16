@@ -307,15 +307,18 @@ function animate() {
   let distanceX = player.position.x - enemy.position.x;
   if (!gameOver) {
     if (Math.abs(distanceX) > 100) {
+      enemy.changeSprite("run");
       enemy.velocity.x = distanceX > 0 ? 2 : -2;
     } else {
       enemy.velocity.x = 0;
+      enemy.changeSprite("idle");
     }
     if (
       Math.abs(distanceX) < 120 &&
       Math.random() < 0.02 &&
       !enemy.isAttacking
     ) {
+      enemy.changeSprite("attack1");
       enemy.attack();
     }
   }
@@ -344,6 +347,16 @@ function animate() {
   if (enemy.health <= 0 || player.health <= 0) {
     determineWinner({ player, enemy, timerID });
   }
+
+  if (!gameOver) {
+    if (player.velocity.y < 0) {
+      player.changeSprite("jump");
+    } else if (keys.a.pressed || keys.d.pressed) {
+      player.changeSprite("run");
+    } else {
+      player.changeSprite("idle");
+    }
+  }
 }
 
 animate();
@@ -366,6 +379,7 @@ window.addEventListener("keydown", (event) => {
 
       case " ":
         player.attack();
+        player.changeSprite("attack1");
         break;
 
       case "ArrowRight":
