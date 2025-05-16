@@ -43,6 +43,7 @@ class Sprite {
     imageSrc,
     scale = 1,
     framesMax = 1,
+    animations = {},
   }) {
     this.image = new Image();
     this.image.src = imageSrc;
@@ -56,6 +57,13 @@ class Sprite {
     this.framesCurrent = 0;
     this.framesElapsed = 0;
     this.framesHold = 5;
+    this.animations = animations;
+    for (const key in animations) {
+      const img = new Image();
+      img.src = animations[key].imageSrc;
+      animations[key].image = img;
+    }
+
     this.lastKey;
     this.attackBox = {
       position: { x: this.position.x, y: this.position.y },
@@ -109,6 +117,15 @@ class Sprite {
     }
   }
 
+  changeSprite(animationKey) {
+    const animation = this.animations[animationKey];
+    if (animation && this.image !== animation.image) {
+      this.image = animation.image;
+      this.framesMax = animation.framesMax;
+      this.framesCurrent = 0;
+    }
+  }
+
   update() {
     this.draw();
     this.animate();
@@ -147,6 +164,15 @@ const player = new Sprite({
   imageSrc: "./somethingElseSprites/Player1/Idle.png",
   framesMax: 8,
   scale: 1.5,
+  animations: {
+    idle: {},
+    run: {},
+    jump: {},
+    fall: {},
+    attack1: {},
+    takeHit: {},
+    Death: {},
+  },
 });
 
 const enemy = new Sprite({
@@ -157,6 +183,15 @@ const enemy = new Sprite({
   imageSrc: "./somethingElseSprites/Player2/Idle.png",
   framesMax: 4,
   scale: 1.5,
+  animations: {
+    idle: {},
+    run: {},
+    jump: {},
+    fall: {},
+    attack1: {},
+    takeHit: {},
+    Death: {},
+  },
 });
 
 const keys = {
