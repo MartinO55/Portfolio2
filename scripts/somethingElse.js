@@ -9,8 +9,33 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 const gravity = 0.7;
 let gameOver = false;
 
+class Background {
+  constructor({ position, imageSrc }) {
+    this.position = position;
+    this.width = 50;
+    this.height = 150;
+
+    this.image = new Image();
+    this.image.src = imageSrc;
+  }
+
+  draw() {
+    c.drawImage(
+      this.image,
+      this.position.x,
+      this.position.y,
+      canvas.width,
+      canvas.height
+    );
+  }
+
+  update() {
+    this.draw();
+  }
+}
+
 class Sprite {
-  constructor({ position, velocity, color = "red", offset }) {
+  constructor({ position, velocity, color = "red", offset, imageSrc }) {
     this.position = position;
     this.velocity = velocity;
     this.width = 50;
@@ -25,11 +50,24 @@ class Sprite {
     this.color = color;
     this.isAttacking;
     this.health = 100;
+
+    this.image = new Image();
+    this.image.src = imageSrc;
   }
 
   draw() {
-    c.fillStyle = this.color;
-    c.fillRect(this.position.x, this.position.y, this.width, this.height);
+    if (this.image.complete) {
+      c.drawImage(
+        this.image,
+        this.position.x,
+        this.position.y,
+        this.width,
+        this.height
+      );
+    } else {
+      c.fillStyle = this.color;
+      c.fillRect(this.position.x, this.position.y, this.width, this.height);
+    }
 
     if (this.isAttacking) {
       c.fillStyle = "green";
@@ -66,10 +104,16 @@ class Sprite {
   }
 }
 
+const background = new Background({
+  position: { x: 0, y: 0 },
+  imageSrc: "./somethingElseSprites/Background.png",
+});
+
 const player = new Sprite({
   position: { x: 0, y: 0 },
   velocity: { x: 0, y: 0 },
   offset: { x: 0, y: 0 },
+  imageSrc: "./somethingElseSprites/Player1/Idle.png",
 });
 
 const enemy = new Sprite({
@@ -77,9 +121,8 @@ const enemy = new Sprite({
   velocity: { x: 0, y: 0 },
   offset: { x: -50, y: 0 },
   color: "blue",
+  imageSrc: "./somethingElseSprites/Player2/Idle.png",
 });
-
-console.log(player);
 
 const keys = {
   a: { pressed: false },
@@ -135,6 +178,7 @@ function animate() {
   window.requestAnimationFrame(animate);
   c.fillStyle = "black";
   c.fillRect(0, 0, canvas.width, canvas.height);
+  background.update();
   player.update();
   enemy.update();
 
