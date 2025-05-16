@@ -165,7 +165,10 @@ const player = new Sprite({
   framesMax: 8,
   scale: 1.5,
   animations: {
-    idle: {},
+    idle: {
+      imageSrc: "./somethingElseSprites/Player1/Idle.png",
+      framesMax: 8,
+    },
     run: {},
     jump: {},
     fall: {},
@@ -184,7 +187,7 @@ const enemy = new Sprite({
   framesMax: 4,
   scale: 1.5,
   animations: {
-    idle: {},
+    idle: { imageSrc: "./somethingElseSprites/Player2/Idle.png", framesMax: 4 },
     run: {},
     jump: {},
     fall: {},
