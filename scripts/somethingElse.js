@@ -78,16 +78,18 @@ class Sprite {
 
   draw() {
     if (this.image.complete) {
+      const frameWidth = this.image.width / this.framesMax;
+      const frameHeight = this.image.height;
       c.drawImage(
         this.image,
-        this.framesCurrent * (this.image.width / this.framesMax),
+        this.framesCurrent * frameWidth,
         0,
-        this.image.width / this.framesMax,
-        this.image.height,
+        frameWidth,
+        frameHeight,
         this.position.x - this.offset.x,
         this.position.y - this.offset.y,
-        (this.width / this.framesMax) * this.scale,
-        this.height * this.scale
+        frameWidth * this.scale,
+        frameHeight * this.scale
       );
     } else {
       c.fillStyle = this.color;
