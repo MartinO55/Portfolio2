@@ -301,7 +301,7 @@ function animate() {
   enemy.velocity.x = 0;
 
   //player 1 move left and right
-  if (!gameOver) {
+  if (!gameOver && !player.dead) {
     if (keys.a.pressed && player.lastKey === "a") {
       player.velocity.x = -5;
     } else if (keys.d.pressed && player.lastKey === "d") {
@@ -319,7 +319,7 @@ function animate() {
 
   //AI Movement
   let distanceX = player.position.x - enemy.position.x;
-  if (!gameOver) {
+  if (!gameOver && !enemy.dead) {
     if (Math.abs(distanceX) > 100) {
       enemy.changeSprite("run");
       enemy.velocity.x = distanceX > 0 ? 2 : -2;
